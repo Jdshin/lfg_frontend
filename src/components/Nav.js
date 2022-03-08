@@ -7,8 +7,8 @@ function Nav(props) {
                 <Link to="/">
                     <div>Home</div>    
                 </Link>
-                <Link to="/explore">
-                    <div>Explore</div>    
+                <Link to="/game">
+                    <div>Find Games</div>    
                 </Link>
             </nav>
         </header>

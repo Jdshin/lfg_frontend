@@ -5,6 +5,7 @@ import App from './App';
 import Nav from './components/Nav'
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from 'react-router-dom';
+import Outlet from 'react';
 
 ReactDOM.render(
   <Router>
