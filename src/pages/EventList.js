@@ -24,13 +24,13 @@ function EventList(props){
     const loaded = () => {
         return(
             allEventState.map((event, index)=>(
-                <a class="eventRef" href="/">
+                <a className="eventRef" href={`/events/${event.pk}`}>
                     <Container key={index} display="flex">
                         <Row xs={10}>
-                            <Col xs={2} class="eventImg">
+                            <Col xs={2} className="eventImg">
                                 <h1>Image here</h1>
                             </Col>
-                            <Col class="eventInfo">
+                            <Col className="eventInfo">
                                 <Row className="align-items-center">
                                     <Col>
                                         <h1>{event.name}</h1>
