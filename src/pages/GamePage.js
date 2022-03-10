@@ -1,13 +1,12 @@
 import {useState, useEffect} from 'react';
+import {backend_url, gamesEP} from '../strings/strings';
 
 function GamePage(props){
-
-    const backend_url = "https://lookingforgroup-jds.herokuapp.com/";
 
     const [gameState, setGames] = useState([]);
 
     const getGamesData = async () => {
-        const response = await fetch(backend_url + "api/games");
+        const response = await fetch(backend_url + gamesEP);
         const data = await response.json();
         
         let gameNames = Object.keys(data);
@@ -22,8 +21,8 @@ function GamePage(props){
 
     const loaded = () => {
         return (
-            gameState.map((game)=>(
-                <div class="container">
+            gameState.map((game, index)=>(
+                <div className="container" key={index}>
                     <div>
                         <h1>{game.name}</h1>
                     </div>
