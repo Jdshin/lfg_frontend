@@ -1,18 +1,28 @@
 import {Link} from 'react-router-dom'
+import { Nav, Navbar, Container, NavDropdown } from 'react-bootstrap';
 
-function Nav(props) {
+function NavComp(props) {
     return (
         <header>
-            <nav className="nav">
-                <Link to="/">
-                    <div>Home</div>    
-                </Link>
-                <Link to="/game">
-                    <div>Find Games</div>    
-                </Link>
-            </nav>
+            <Navbar bg="light" expand="true">
+                <Container>
+                    <Navbar.Brand href="/">Looking For Group</Navbar.Brand>
+                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <div>
+                            <Link to="/">
+                                <div>Home</div>
+                            </Link>
+                            <Link to="/games">
+                                <div>Games</div>
+                            </Link>
+                        </div>
+                    </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
         </header>
     );
 }
 
-export default Nav;
+export default NavComp;

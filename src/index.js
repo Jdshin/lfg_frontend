@@ -2,15 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Nav from './components/Nav'
+import NavComp from './components/Nav'
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from 'react-router-dom';
-import Outlet from 'react';
 
 ReactDOM.render(
   <Router>
     <React.StrictMode>
-      <Nav />
+      <NavComp />
       <App />
     </React.StrictMode>
   </Router>,
