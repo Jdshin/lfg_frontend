@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import {Form, Button} from 'react-bootstrap';
+import axiosInstance from '../axiosApi';
 
 function SignupPage(props){
 
@@ -19,7 +20,18 @@ function SignupPage(props){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(form.username);
+        try {
+            axiosInstance.defaults.headers['Authorization'] = "JWT ";
+            axiosInstance.post('api/user/create/', {
+                "username": form.username,
+                "email": form.email,
+                "password": form.password
+            }).then((res)=>{
+                return res;
+            })
+        } catch (error){
+            throw error;
+        }
     }
 
     return (
@@ -33,7 +45,7 @@ function SignupPage(props){
                     <Form.Label>Email address</Form.Label>
                     <Form.Control name="email" type="email" placeholder="Enter email" value={form.email} onChange={handleChange}/>
                     <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
+                        We'll never share your email with anyone else.
                     </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">

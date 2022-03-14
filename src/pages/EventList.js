@@ -19,7 +19,9 @@ function EventList(props){
         setEventState(eventsArr);
     }
 
-    useEffect(()=>getEvents());
+    useEffect(()=>{
+        getEvents();
+    }, []);
 
     const loaded = () => {
         return(

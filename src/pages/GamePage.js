@@ -17,11 +17,12 @@ function GamePage(props){
         setGames(newGameState);
     }
 
-    useEffect(()=> getGamesData());
+    useEffect( () => {
+        getGamesData();
+    }, []);
 
     const loaded = () => {
-        return (
-            gameState.map((game, index)=>(
+        const gameArr = gameState.map((game, index)=>(
                 <div className="container" key={index}>
                     <div>
                         <h1>{game.name}</h1>
@@ -30,8 +31,8 @@ function GamePage(props){
                         <img src={game.img} alt={game.name} />
                     </div>
                 </div>
-            ))
-        );
+        ));
+        return gameArr
     };
 
     return gameState ? loaded() : <h1>Loading...</h1>

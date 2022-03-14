@@ -15,7 +15,9 @@ function EventPage(props){
         setEventState(eventJSONObj);
     }
 
-    useEffect(()=>getEventData(), []);
+    useEffect(()=>{
+        getEventData();
+    }, []);
 
     const loaded = () => {
 
