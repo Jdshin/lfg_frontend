@@ -1,15 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import GamePage from './pages/GamePage';
 import Home from './pages/Home';
 import SignupPage from './pages/SignupPage';
 import Login from './pages/Login';
-import PlayerPage from './pages/PlayerPage';
 import EventList from './pages/EventList';
 import EventPage from './pages/EventPage';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import {useState, useEffect} from 'react';
+import {Route, Routes} from 'react-router-dom';
 import ProtectView from './pages/ProtectView';
 import UpdateEvent from './pages/UpdateEvent';
 
