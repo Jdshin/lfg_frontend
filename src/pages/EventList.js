@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {backend_url, eventsEP} from '../strings/strings'
+import {backend_url, eventsEP} from '../strings/strings';
 import {Col, Container, Nav, Row} from 'react-bootstrap';
 
 // Get a HTML elem of all events 
@@ -10,9 +10,7 @@ function EventList(props){
     const getEvents = async () => {
         const response = await fetch(backend_url + eventsEP);
         const data = await response.json();
-
         let eventIds = Object.keys(data);
-
         let eventsArr = eventIds.map((id)=>(
             JSON.parse(data[id])
         ));
