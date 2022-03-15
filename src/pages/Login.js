@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {Form, Button} from 'react-bootstrap';
 import axiosInstance from "../axiosApi";
+import { useNavigate } from "react-router";
 
 function Login(props){
 
@@ -17,6 +18,8 @@ function Login(props){
         }));
     };
 
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(form.username);
@@ -28,6 +31,7 @@ function Login(props){
                 axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
                 localStorage.setItem('access_token', response.data.access);
                 localStorage.setItem('refresh_token', response.data.refresh);
+                navigate("/");
                 return response.data;
             });
             console.log(localStorage.getItem('access_token'));

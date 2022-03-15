@@ -11,6 +11,7 @@ import EventPage from './pages/EventPage';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import ProtectView from './pages/ProtectView';
+import UpdateEvent from './pages/UpdateEvent';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/account/create" element={<SignupPage />} />
         <Route path="/account/login" element={<Login />} />
         <Route path="/proview/" element={<ProtectView />} />
+        <Route path='/update/event/:pk' element={<UpdateEvent />} />
       </Routes>
     </div>
   );
