@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/*"
-  to = "public/index.html"
+  to = "/index.html"
 
 command = "CI=false npm run build"
