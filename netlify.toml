@@ -2,4 +2,4 @@
   from = "/*"
   to = "public/index.html"
 
-command = "CI= npm run build"
+command = "CI=false npm run build"
