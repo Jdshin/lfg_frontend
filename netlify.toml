@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "public/index.html"
+
+command = "CI= npm run build"
